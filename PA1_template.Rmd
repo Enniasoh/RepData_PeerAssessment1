@@ -5,31 +5,6 @@ date: "12/21/2021"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
-
-
 ```{reading the file, echo = TRUE}
 originalData <- read.csv("activity.csv",header=TRUE)
 datalessNA <- na.omit(originalData)
@@ -51,6 +26,8 @@ png("histogram1.png")
 hist(steps_each_day$x, col="blue", xlab = "Number of steps per day",
      main = "Total number of steps taken each day", breaks = 30)
 dev.off()
+hist(steps_each_day$x, col="blue", xlab = "Number of steps per day",
+     main = "Total number of steps taken each day", breaks = 30)
 ```
 
 ## 1C. Calculate and report the mean and median of the total number of steps taken per day
@@ -76,6 +53,7 @@ png("timeseries.png")
 plot(mean_each_day$Interval, mean_each_day$x, type = "l", xlab = "5-min intervals",
      ylab = "Average number of steps taken", main = " Average daily activity pattern")
 dev.off()
+
 ```
 
 ## 2B. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
