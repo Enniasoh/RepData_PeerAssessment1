@@ -25,10 +25,6 @@ steps_each_day <- aggregate(datalessNA$steps, by= list(datalessNA$date), FUN="su
 
 
 ```histogram
-png("histogram1.png")
-hist(steps_each_day$x, col="blue", xlab = "Number of steps per day",
-     main = "Total number of steps taken each day", breaks = 30)
-dev.off()
 hist(steps_each_day$x, col="blue", xlab = "Number of steps per day",
      main = "Total number of steps taken each day", breaks = 30)
 ```
